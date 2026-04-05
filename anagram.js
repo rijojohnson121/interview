@@ -23,3 +23,5 @@ function isAnagram (s1, s2) {
 }
 
 console.log(isAnagram("listen","silent"))
+
+//use this to interview 
