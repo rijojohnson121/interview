@@ -24,4 +24,13 @@ function isAnagram (s1, s2) {
 
 console.log(isAnagram("listen","silent"))
 
-//use this to interview 
+
+// Palindrome function
+function isPalindrome(s) {
+    const clean = s.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return clean === clean.split('').reverse().join('');
+}
+
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+console.log(isPalindrome("hello")); // false
