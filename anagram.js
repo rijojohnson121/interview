@@ -1,9 +1,7 @@
+function isAnagram(s1,s2) {
 
-/*// what is an anagram silent,listen = astronomer moon starer
+    const clean = s => s.toLowerCase().replace(/\s/g,'');
 
-function isAnagram (s1, s2) {
-
-    const clean = s => s.toLowerCase().replace(/\s/g, '');
     s1 = clean(s1);
     s2 = clean(s2);
 
@@ -11,45 +9,21 @@ function isAnagram (s1, s2) {
 
     const freq = {};
 
-    for (let ch of s1) freq[ch] = (freq[ch] ||0 ) + 1 ; 
+    for(let ch of s1) {
 
-    for (let ch of s2) {
+        freq[ch] = ( freq[ch] || 0 ) + 1;
+    }
+
+    for(let ch of s2) {
 
         if(!freq[ch]) return false;
         freq[ch]--;
-        
     }
-        return true;
+    return true;
+
 }
 
-console.log(isAnagram("listen","silent"))
+console.log(isAnagram("silent", "listen"));
 
 
-// Palindrome function
-function isPalindrome(s) {
-    const clean = s.toLowerCase().replace(/[^a-z0-9]/g, '');
-    return clean === clean.split('').reverse().join('');
-}
 
-console.log(isPalindrome("racecar")); // true
-console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
-console.log(isPalindrome("hello")); // false */
-
-function isAnagram(s1, s2) {
-const clean = s => s.toLowerCase().replace(/\s/g, '');
-s1 = clean(s1);
-s2= clean(s2);
-
-if (s1.length != s2.length) return false;
-
-const freq = {};
-
-for(let ch of s1) freq[ch] = (freq[ch] || 0 ) + 1;
-for (let ch of s2) {
-if(!freq[ch]) return false;
-freq[ch]--;
-} 
-return true;
-}
-console.log(isAnagram("listen", "silent")); // should be: true
-console.log(isAnagram("hello", "world"));   // should be: false
